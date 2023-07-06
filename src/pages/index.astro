@@ -1,4 +1,8 @@
 ---
+import Button from "../componets/Button.astro";
+import "../styles/style.css";
+
+const text = "hi";
 ---
 
 <html lang="en">
@@ -11,5 +15,35 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<Button
+			id="btn1"
+			classes="cool"
+			tab-index={0}
+			theme="info"
+			isFilled={true}
+			isRounded={true}
+			size="md"
+		>
+			Click me!
+		</Button>
+		<Button
+			id="btn2"
+			tab-index={0}
+			theme="danger"
+			isFilled={false}
+			isRounded={false}
+			size="lg"
+		>
+			<span>Click me!</span>
+			<span>🔥</span>
+		</Button>
 	</body>
 </html>
+
+<script>
+	const btn1 = document.getElementById("btn1");
+	const btn2 = document.getElementById("btn2");
+
+	btn1?.addEventListener("click", () => alert("click btn 1"));
+	btn2?.addEventListener("click", () => alert("click btn 2"));
+</script>
